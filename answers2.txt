@@ -1,0 +1,220 @@
+/*Section II – UNIX, Scripting*/
+
+/*---------------------------------------------------------------------------------------------------*/
+
+6. What is the octal representation of a file that can be read and written only by its owner?
+    600
+    6: User(Owner) have read+write
+    0: Group have none
+    0: Other have none
+
+7. In UNIX systems, what is the common name of the special user that can access and modify every
+file?
+    Superuser
+
+8. Which file permission classes are available in UNIX systems?
+
+    Traditional UNIX file permissions can assign ownership to three classes of users:
+    User
+    Group
+    Other    
+
+9. As of 2020, which percentage of servers have UNIX-like OS?
+
+    24 November 2020 - 71,9% servers have UNIX-like OS.
+
+10. The command ssh will:
+
+    create a encrypted connection between you and the place you are connected to. 
+
+11. UNIX Command: access your current working directory
+
+    The "pwd" (print working directory) command will print the current working directory. 
+
+12. UNIX Command: rename files (give an example)
+
+    The "mv" command allows you to rename files. Example: mv old-file-name.txt new-file-name.txt
+
+13. UNIX Command: schedule the execution of programs in the future
+
+    The command "crontab -e" will create a cronjob which is used for scheduling a command or script
+    to run automatically at a specified time and date.
+
+14. UNIX Command: Forcefully shutdown the command with process ID 123
+
+    The command "kill -9 123" is used to forcefully shutdown the command with process ID 123.
+
+15. UNIX Command: access your root user
+
+    The command "sudo" will access your root user.
+
+16. Crontab scheduled: At minute 30 on Sunday.
+
+    30 * * * 6
+
+17. Crontab scheduled: At minute 30 on day-of-month 15.
+
+    30 * 15 * * 
+
+18. Crontab scheduled: At 05:30 on every day-of-week from Sunday through Monday in June.
+
+    30 05 * 6 0-1
+
+19. Script: print your name and date
+
+    You can simply write date +"YOUR_NAME %d/%m%Y" to print to the consoll. If you want to do it from a script you can do the following:
+    #!/bin/bash
+    date=$(date)
+    echo "YOUR_NAME $date"
+
+20. Script: add two numeric values, print the result
+
+    #!/bin/bash
+    # Add two numeric values, print the result
+
+    a=5 
+    b=2
+
+    sum=$(( $a + $b ))
+    echo $sum
+
+
+21. Script: inputs username, prints “USERNAME stored”
+
+    #!/bin/bash
+    #inputs username, prints “USERNAME stored”
+
+    read -p "Enter username: " username
+    echo "$username stored"
+
+22. Script: Store the output of the command “hostname” in a variable. Display “This script is
+running on _.” where “_” is the output of the “hostname” command.
+
+    #!/bin/bash
+    #Store the output of the command “hostname” in a variable. Display “This script is
+    #running on _.” where “_” is the output of the “hostname” command.
+
+    hostname=$(hostname)
+    echo "This script is running on $hostname"
+
+23. Script: Store the output of the working directory (from where the script is run) in a variable
+then print the variable.
+
+    #!/bin/bash
+    #Store the output of the working directory (from where the script is run) in a variable
+    #then print the variable.
+
+    pwd=$(pwd)
+    echo "The working directory is $pwd"
+
+24. Create a step by step tutorial on how to create a cronjob that prints “Task scheduled at” +
+DATE. Cronjob is scheduled every 30 minutes on today’s date (only today).
+
+    First click on the windows key and type in cmd to open the command line. Then type in ssh username@login.stud.ntnu.no and type in your passord.
+    Then type in crontab -e. For the ability to edit you need to press "i" and the type in */30 * CURRENT_DAY CURRENT_MONTH * echo "Task scheduled
+    at $(date)" >> /tmp/cronEx.txt. Then hit escape, and type in semicolon and wq to exit.     
+
+25. Create a script that takes an input (letter or number) that will display the answer of a question.
+The script should when started list a menu for the user with the different questions that can be
+chosen and which corresponding letter the user will have to give as input to display the answer of
+the desired question. One of the possible inputs the user should be able to make is "q" for quitting
+the script. The menu should also have a default case where all the items is displayed again, or no
+changes is made if the user gives an invalid input. Hint: use a switch case to be able to handle the
+menu. Each option in the menu should lead to an echo of the answer  
+
+    #!/bin/bash
+
+    clear
+    function game{
+        echo "Welcome to the Q&A game! Good luck"
+        echo
+        echo "Here are the following questions: "
+        echo
+        echo "What is 293*4?"
+        echo "What day of the month is Black Friday this week?"
+        echo "How tall is Mount Everest?"
+        echo "What is the fastest land animal?"
+        echo
+        echo "Press q/Q for quitting the game"
+        read -p "Pick one of the questions above (1-4)" answer
+
+        case $answer in
+            1)
+            clear
+            echo "What is 293*4?"
+            echo "1172, 1144, 1098"
+            read answer
+            case $answer in 
+                1172)
+                read -p "Correct! Enter to continue"
+                game
+                ;;
+                Q | q)
+                ;;
+                *)
+                read -p "Sorry try again! Press enter to try again"
+                game
+                ;;
+            esac
+            ;;
+            2)
+            clear
+            echo "What day of month is Black Friday this year?"
+            echo "30th 24th 27th"
+            read answer
+            case $answer in 
+                27th | 27)
+                read -p "Correct! Enter to continue"
+                game
+                ;;
+                Q | q)
+                ;;
+                *)
+                read -p "Sorry try again! Press enter to try again"
+                game
+                ;;
+            esac
+            ;;
+            3)
+            clear
+            echo "How tall is Mount Everest?"
+            echo "8858, 8838, 8848"
+            read answer
+            case $answer in 
+                8848)
+                read -p "Correct! Enter to continue"
+                game
+                ;;
+                q | Q)
+                ;;
+                *)
+                read -p "Sorry try again! Press enter to try again"
+                game
+                ;;
+            esac
+            ;;
+            4)
+            clear
+            echo "What is the fastest land animal?"
+            echo "Leopard, Lion, Cheetah"
+            read answer
+            case $answer in
+                Cheetah)
+                read -p "Correct! Enter to continue"
+                game
+                ;;
+                q | Q)
+                ;;
+                *)
+                read -p "Sorry try again! Press enter to try again"
+                game
+                ;;
+            esac
+            ;;
+            q | Q)
+            ;;
+            *)
+            game
+            ;;    
+        esac            
+    }
