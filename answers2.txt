@@ -62,7 +62,7 @@ file?
 
 19. Script: print your name and date
 
-    You can simply write date +"YOUR_NAME %d/%m%Y" to print to the consoll. If you want to do it from a script you can do the following:
+    #You can simply write date +"YOUR_NAME %d/%m%Y" to print to the consoll. If you want to do it from a script you can do the following:
     #!/bin/bash
     date=$(date)
     echo "YOUR_NAME $date"

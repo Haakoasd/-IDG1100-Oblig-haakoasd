@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Oblig</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+    <div class="container">
+        <h1>IDG1100 OBLIG</h1>
+        <h3>1. What components are part of the Von Neuman Architecture</h3>
+        <p>The following components are part of the Von Neuman Architecture:
+
+            A processing unit that contains an arithmetic logic unit and processor registers.
+            A control unit that contains an instruction register and program counter.
+            Memory that stores data and intructions.
+            External mass storage.
+            Input and output mechanisms.</p>
+
+        <h3>2. What is user space?</h3>
+        <p>    The user space(also called userland) refers to all code that runs outside the operating systems kernel. The user space is basically
+            system memory allocated to running applications, while the kernel space is memory allocated to the kernel and the OS. </p>
+        
+        <h3>3. What is the shell?</h3>
+        <p>    The shell is a tool for manipulating data and executing several applications under certain conditions. You can access a shell from a
+            command line (CLI) or using graphical user interface (GUI). If you are operating with a CLI it require the user to be familiar with 
+            commands and their calling syntax. If you are using a Unix-like system you have different types of shells.</p>
+
+        <h3>4. Where is the shell located?</h3>
+        <p>The shell is located in the User Space (Userland)</p>
+
+        <h3>5. What is the main task of the shell?</h3>
+        <p>    The main task/purpose of the shell is to read commands and run other programs. One of the beggest advantages with the shell is the high
+            "action-to-keystroke" ratio. By that I mean you can perform complicated tasks with simple commands. </p>
+
+        <h3>6. What is the octal representation of a file that can be read and written only by its owner?</h3>
+        <p>    600
+            6: User(Owner) have read+write
+            0: Group have none
+            0: Other have none</p>
+        
+        <h3>7. In UNIX systems, what is the common name of the special user that can access and modify every file?</h3>
+        <p>Superuser</p>
+
+        <h3>8. Which file permission classes are available in UNIX systems?</h3>
+        <p>    Traditional UNIX file permissions can assign ownership to three classes of users:
+            User
+            Group
+            Other  </p>
+        
+        <h3>9. As of 2020, which percentage of servers have UNIX-like OS?</h3>
+        <p>24 November 2020 - 71,9% servers have UNIX-like OS.</p>
+
+        <h3>10. The command ssh will:</h3>
+        <p>    create a encrypted connection between you and the place you are connected to. </p>
+
+        <h3>11. UNIX Command: access your current working directory</h3>
+        <p>The "pwd" (print working directory) command will print the current working directory. </p>
+
+        <h3>12. UNIX Command: rename files (give an example)</h3>
+        <p>    The "mv" command allows you to rename files. Example: mv old-file-name.txt new-file-name.txt</p>
+
+        <h3>13. UNIX Command: schedule the execution of programs in the future</h3>
+        <p>    The command "crontab -e" will create a cronjob which is used for scheduling a command or script
+            to run automatically at a specified time and date.</p>
+        
+        <h3>14. UNIX Command: Forcefully shutdown the command with process ID 123</h3>
+        <p>    The command "kill -9 123" is used to forcefully shutdown the command with process ID 123.</p>
+
+        <h3>15. UNIX Command: access your root user</h3>
+        <p>    The command "sudo" will access your root user.</p>
+
+        <h3>16. Crontab scheduled: At minute 30 on Sunday.</h3>
+        <p>    30 * * * 6</p>
+
+        <h3>17. Crontab scheduled: At minute 30 on day-of-month 15.</h3>
+        <p>    30 * 15 * *</p>
+
+        <h3>18. Crontab scheduled: At 05:30 on every day-of-week from Sunday through Monday in June.</h3>
+        <p>    30 05 * 6 0-1</p>
+
+        <h3>19. Script: print your name and date</h3>
+        <p>    You can simply write date +"YOUR_NAME %d/%m%Y" to print to the consoll. If you want to do it from a script you can do the following:
+
+        <div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">    <span style="color: #408080; font-style: italic">#You can simply write date +&quot;YOUR_NAME %d/%m%Y&quot; to print to the consoll. If you want to do it from a script you can do the following:</span>
+            <span style="color: #408080; font-style: italic">#!/bin/bash</span>
+            <span style="color: #19177C">date</span><span style="color: #666666">=</span><span style="color: #008000; font-weight: bold">$(</span>date<span style="color: #008000; font-weight: bold">)</span>
+            <span style="color: #008000">echo</span> <span style="color: #BA2121">&quot;YOUR_NAME $date&quot;</span>
+            </pre>
+        </div>
+
+        <code style="display: none;"> #!/bin/bash
+            date=$(date)
+            echo "YOUR_NAME $date"</code> </p>
+
+        <h3>20. Script: add two numeric values, print the result</h3>
+
+        <div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">    <span style="color: #408080; font-style: italic">#!/bin/bash</span>
+            <span style="color: #408080; font-style: italic"># Add two numeric values, print the result</span>
+
+            <span style="color: #19177C">a</span><span style="color: #666666">=</span>5 
+            <span style="color: #19177C">b</span><span style="color: #666666">=</span>2
+
+            <span style="color: #19177C">sum</span><span style="color: #666666">=</span><span style="color: #008000; font-weight: bold">$((</span> <span style="color: #19177C">$a</span> <span style="color: #666666">+</span> <span style="color: #19177C">$b</span> <span style="color: #008000; font-weight: bold">))</span>
+            <span style="color: #008000">echo</span> <span style="color: #19177C">$sum</span>
+            </pre>
+        </div>
+
+
+        <code style="display: none;">    #!/bin/bash
+            # Add two numeric values, print the result
+        
+            a=5 
+            b=2
+        
+            sum=$(( $a + $b ))
+            echo $sum</code>
+
+        <h3>21. Script: inputs username, prints “USERNAME stored”</h3>
+
+        <div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">    <span style="color: #408080; font-style: italic">#!/bin/bash</span>
+            <span style="color: #408080; font-style: italic">#inputs username, prints “USERNAME stored”</span>
+
+            <span style="color: #008000">read</span> -p <span style="color: #BA2121">&quot;Enter username: &quot;</span> username
+            <span style="color: #008000">echo</span> <span style="color: #BA2121">&quot;$username stored&quot;</span>
+            </pre>
+        </div>
+
+        <code style="display: none;">#!/bin/bash
+            #inputs username, prints “USERNAME stored”
+        
+            read -p "Enter username: " username
+            echo "$username stored"</code>
+
+        <h3>22. Script: Store the output of the command “hostname” in a variable. Display “This script is
+            running on _.” where “_” is the output of the “hostname” command.</h3>
+
+        <div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">    <span style="color: #408080; font-style: italic">#!/bin/bash</span>
+            <span style="color: #408080; font-style: italic">#Store the output of the command “hostname” in a variable. Display “This script is</span>
+            <span style="color: #408080; font-style: italic">#running on _.” where “_” is the output of the “hostname” command.</span>
+
+            <span style="color: #19177C">hostname</span><span style="color: #666666">=</span><span style="color: #008000; font-weight: bold">$(</span>hostname<span style="color: #008000; font-weight: bold">)</span>
+            <span style="color: #008000">echo</span> <span style="color: #BA2121">&quot;This script is running on $hostname&quot;</span>
+            </pre>
+        </div>
+
+        
+        <code style="display: none;">    #!/bin/bash
+            #Store the output of the command “hostname” in a variable. Display “This script is
+            #running on _.” where “_” is the output of the “hostname” command.
+        
+            hostname=$(hostname)
+            echo "This script is running on $hostname"</code>
+
+        <h3>23. Script: Store the output of the working directory (from where the script is run) in a variable
+            then print the variable.</h3>
+        <div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">    <span style="color: #408080; font-style: italic">#!/bin/bash</span>
+            <span style="color: #408080; font-style: italic">#Store the output of the working directory (from where the script is run) in a variable</span>
+            <span style="color: #408080; font-style: italic">#then print the variable.</span>
+
+            <span style="color: #008000">pwd</span><span style="color: #666666">=</span><span style="color: #008000; font-weight: bold">$(</span><span style="color: #008000">pwd</span><span style="color: #008000; font-weight: bold">)</span>
+            <span style="color: #008000">echo</span> <span style="color: #BA2121">&quot;The working directory is $pwd&quot;</span>
+            </pre>
+        </div>
+
+            
+        <code style="display: none;">    #!/bin/bash
+            #Store the output of the working directory (from where the script is run) in a variable
+            #then print the variable.
+        
+            pwd=$(pwd)
+            echo "The working directory is $pwd"</code>
+
+        <h3>24. Create a step by step tutorial on how to create a cronjob that prints “Task scheduled at” +
+            DATE. Cronjob is scheduled every 30 minutes on today’s date (only today).</h3>
+        <p>    First click on the windows key and type in cmd to open the command line. Then type in ssh username@login.stud.ntnu.no and type in your passord.
+            Then type in crontab -e. For the ability to edit you need to press "i" and the type in */30 * CURRENT_DAY CURRENT_MONTH * echo "Task scheduled
+            at $(date)" >> /tmp/cronEx.txt. Then hit escape, and type in semicolon and wq to exit.    </p>
+
+        <h3>25. Create a script that takes an input (letter or number) that will display the answer of a question.
+            The script should when started list a menu for the user with the different questions that can be
+            chosen and which corresponding letter the user will have to give as input to display the answer of
+            the desired question. One of the possible inputs the user should be able to make is "q" for quitting
+            the script. The menu should also have a default case where all the items is displayed again, or no
+            changes is made if the user gives an invalid input. Hint: use a switch case to be able to handle the
+            menu. Each option in the menu should lead to an echo of the answer  </h3>
+
+        <div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #8f5902; font-style: italic">#!/bin/bash</span>
+
+            clear
+            <span style="color: #204a87; font-weight: bold">function </span>game<span style="color: #ce5c00; font-weight: bold">{</span>
+                <span style="color: #204a87">echo</span> <span style="color: #4e9a06">&quot;Welcome to the Q&amp;A game! Good luck&quot;</span>
+                <span style="color: #204a87">echo</span>
+                <span style="color: #204a87">echo</span> <span style="color: #4e9a06">&quot;Here are the following questions: &quot;</span>
+                <span style="color: #204a87">echo</span>
+                <span style="color: #204a87">echo</span> <span style="color: #4e9a06">&quot;What is 293*4?&quot;</span>
+                <span style="color: #204a87">echo</span> <span style="color: #4e9a06">&quot;What day of the month is Black Friday this week?&quot;</span>
+                <span style="color: #204a87">echo</span> <span style="color: #4e9a06">&quot;How tall is Mount Everest?&quot;</span>
+                <span style="color: #204a87">echo</span> <span style="color: #4e9a06">&quot;What is the fastest land animal?&quot;</span>
+                <span style="color: #204a87">echo</span>
+                <span style="color: #204a87">echo</span> <span style="color: #4e9a06">&quot;Press q/Q for quitting the game&quot;</span>
+                <span style="color: #204a87">read</span> -p <span style="color: #4e9a06">&quot;Pick one of the questions above (1-4)&quot;</span> answer
+        
+                <span style="color: #204a87; font-weight: bold">case</span> <span style="color: #000000">$answer</span> in
+                    1<span style="color: #ce5c00; font-weight: bold">)</span>
+                    clear
+                    <span style="color: #204a87">echo</span> <span style="color: #4e9a06">&quot;What is 293*4?&quot;</span>
+                    <span style="color: #204a87">echo</span> <span style="color: #4e9a06">&quot;1172, 1144, 1098&quot;</span>
+                    <span style="color: #204a87">read </span>answer
+                    <span style="color: #204a87; font-weight: bold">case</span> <span style="color: #000000">$answer</span> in 
+                        1172<span style="color: #ce5c00; font-weight: bold">)</span>
+                        <span style="color: #204a87">read</span> -p <span style="color: #4e9a06">&quot;Correct! Enter to continue&quot;</span>
+                        game
+                        ;;
+                        Q | q<span style="color: #ce5c00; font-weight: bold">)</span>
+                        ;;
+                        *<span style="color: #ce5c00; font-weight: bold">)</span>
+                        <span style="color: #204a87">read</span> -p <span style="color: #4e9a06">&quot;Sorry try again! Press enter to try again&quot;</span>
+                        game
+                        ;;
+                    <span style="color: #204a87; font-weight: bold">esac</span>
+                    ;;
+                    2<span style="color: #ce5c00; font-weight: bold">)</span>
+                    clear
+                    <span style="color: #204a87">echo</span> <span style="color: #4e9a06">&quot;What day of month is Black Friday this year?&quot;</span>
+                    <span style="color: #204a87">echo</span> <span style="color: #4e9a06">&quot;30th 24th 27th&quot;</span>
+                    <span style="color: #204a87">read </span>answer
+                    <span style="color: #204a87; font-weight: bold">case</span> <span style="color: #000000">$answer</span> in 
+                        27th | 27<span style="color: #ce5c00; font-weight: bold">)</span>
+                        <span style="color: #204a87">read</span> -p <span style="color: #4e9a06">&quot;Correct! Enter to continue&quot;</span>
+                        game
+                        ;;
+                        Q | q<span style="color: #ce5c00; font-weight: bold">)</span>
+                        ;;
+                        *<span style="color: #ce5c00; font-weight: bold">)</span>
+                        <span style="color: #204a87">read</span> -p <span style="color: #4e9a06">&quot;Sorry try again! Press enter to try again&quot;</span>
+                        game
+                        ;;
+                    <span style="color: #204a87; font-weight: bold">esac</span>
+                    ;;
+                    3<span style="color: #ce5c00; font-weight: bold">)</span>
+                    clear
+                    <span style="color: #204a87">echo</span> <span style="color: #4e9a06">&quot;How tall is Mount Everest?&quot;</span>
+                    <span style="color: #204a87">echo</span> <span style="color: #4e9a06">&quot;8858, 8838, 8848&quot;</span>
+                    <span style="color: #204a87">read </span>answer
+                    <span style="color: #204a87; font-weight: bold">case</span> <span style="color: #000000">$answer</span> in 
+                        8848<span style="color: #ce5c00; font-weight: bold">)</span>
+                        <span style="color: #204a87">read</span> -p <span style="color: #4e9a06">&quot;Correct! Enter to continue&quot;</span>
+                        game
+                        ;;
+                        q | Q<span style="color: #ce5c00; font-weight: bold">)</span>
+                        ;;
+                        *<span style="color: #ce5c00; font-weight: bold">)</span>
+                        <span style="color: #204a87">read</span> -p <span style="color: #4e9a06">&quot;Sorry try again! Press enter to try again&quot;</span>
+                        game
+                        ;;
+                    <span style="color: #204a87; font-weight: bold">esac</span>
+                    ;;
+                    4<span style="color: #ce5c00; font-weight: bold">)</span>
+                    clear
+                    <span style="color: #204a87">echo</span> <span style="color: #4e9a06">&quot;What is the fastest land animal?&quot;</span>
+                    <span style="color: #204a87">echo</span> <span style="color: #4e9a06">&quot;Leopard, Lion, Cheetah&quot;</span>
+                    <span style="color: #204a87">read </span>answer
+                    <span style="color: #204a87; font-weight: bold">case</span> <span style="color: #000000">$answer</span> in
+                        Cheetah<span style="color: #ce5c00; font-weight: bold">)</span>
+                        <span style="color: #204a87">read</span> -p <span style="color: #4e9a06">&quot;Correct! Enter to continue&quot;</span>
+                        game
+                        ;;
+                        q | Q<span style="color: #ce5c00; font-weight: bold">)</span>
+                        ;;
+                        *<span style="color: #ce5c00; font-weight: bold">)</span>
+                        <span style="color: #204a87">read</span> -p <span style="color: #4e9a06">&quot;Sorry try again! Press enter to try again&quot;</span>
+                        game
+                        ;;
+                    <span style="color: #204a87; font-weight: bold">esac</span>
+                    ;;
+                    q | Q<span style="color: #ce5c00; font-weight: bold">)</span>
+                    ;;
+                    *<span style="color: #ce5c00; font-weight: bold">)</span>
+                    game
+                    ;;    
+                <span style="color: #204a87; font-weight: bold">esac</span>            
+            <span style="color: #ce5c00; font-weight: bold">}</span>
+        </pre>
+    </div>
+
+        <!--Hidden code in code tag-->
+        <code style="display: none;">#!/bin/bash
+
+            clear
+            function game{
+                echo "Welcome to the Q&A game! Good luck"
+                echo
+                echo "Here are the following questions: "
+                echo
+                echo "What is 293*4?"
+                echo "What day of the month is Black Friday this week?"
+                echo "How tall is Mount Everest?"
+                echo "What is the fastest land animal?"
+                echo
+                echo "Press q/Q for quitting the game"
+                read -p "Pick one of the questions above (1-4)" answer
+        
+                case $answer in
+                    1)
+                    clear
+                    echo "What is 293*4?"
+                    echo "1172, 1144, 1098"
+                    read answer
+                    case $answer in 
+                        1172)
+                        read -p "Correct! Enter to continue"
+                        game
+                        ;;
+                        Q | q)
+                        ;;
+                        *)
+                        read -p "Sorry try again! Press enter to try again"
+                        game
+                        ;;
+                    esac
+                    ;;
+                    2)
+                    clear
+                    echo "What day of month is Black Friday this year?"
+                    echo "30th 24th 27th"
+                    read answer
+                    case $answer in 
+                        27th | 27)
+                        read -p "Correct! Enter to continue"
+                        game
+                        ;;
+                        Q | q)
+                        ;;
+                        *)
+                        read -p "Sorry try again! Press enter to try again"
+                        game
+                        ;;
+                    esac
+                    ;;
+                    3)
+                    clear
+                    echo "How tall is Mount Everest?"
+                    echo "8858, 8838, 8848"
+                    read answer
+                    case $answer in 
+                        8848)
+                        read -p "Correct! Enter to continue"
+                        game
+                        ;;
+                        q | Q)
+                        ;;
+                        *)
+                        read -p "Sorry try again! Press enter to try again"
+                        game
+                        ;;
+                    esac
+                    ;;
+                    4)
+                    clear
+                    echo "What is the fastest land animal?"
+                    echo "Leopard, Lion, Cheetah"
+                    read answer
+                    case $answer in
+                        Cheetah)
+                        read -p "Correct! Enter to continue"
+                        game
+                        ;;
+                        q | Q)
+                        ;;
+                        *)
+                        read -p "Sorry try again! Press enter to try again"
+                        game
+                        ;;
+                    esac
+                    ;;
+                    q | Q)
+                    ;;
+                    *)
+                    game
+                    ;;    
+                esac            
+            }
+        </code>
+
+    </div>
+    
+</body>
+</html>
